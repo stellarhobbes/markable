@@ -37,7 +37,7 @@ const SimpleSection = (props) => {
         {props.content && (
           <Content textColor={props.textColor}>{props.content}</Content>
         )}
-        {props.url && <Button textButton={props.textButton}></Button>}
+        {props.url && <Button url={props.url} textButton={props.textButton}></Button>}
       </Wrapper>
     </Main>
   );

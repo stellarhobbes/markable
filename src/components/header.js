@@ -64,7 +64,7 @@ const Header = (props) => {
           </Title>
           <Content>
             Vous souhaitez avoir une image à la hauteur de votre expertise et
-            montrer ce qui vous rend unique ? Markable vous aide à créer la
+            montrer ce qui vous rend unique&nbsp;? Markable vous aide à créer la
             stratégie de marque qui vous rendra définitivement et radicalement
             différent sur votre marché.
           </Content>

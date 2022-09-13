@@ -75,7 +75,7 @@ const IndexPage = () => {
         La clé ? <br />
         <Span>Oser être radicalement différent !</Span>
       </SimpleSection>
-      <Transition src={TransitionDown} />
+      <Transition src={TransitionDown} style={{ marginTop: -10 }}/>
       <SimpleSection backgroundColor="white" titleColor="black">
         <Span>Notre solution </Span>
         <br />
