@@ -4,6 +4,15 @@ module.exports = {
     siteUrl: `https://www.markable.so`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/icon.png`,
+        name: `Markable`,
+        short_name: `Markable`,
+        start_url: `/`
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
