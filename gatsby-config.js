@@ -4,12 +4,6 @@ module.exports = {
     siteUrl: `https://www.markable.so`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        icon: './images/icon.png',
-      },
-    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",

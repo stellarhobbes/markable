@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import GlobalStyle from "../global-styles";
 
@@ -19,8 +18,6 @@ import TalkCharacter from "../images/characters-markable-talk.png";
 import TransitionDown from "../images/page-transition.png";
 import TransitionUp from "../images/page-transition-up.png";
 import TeamPicture from "../images/team-markable.png";
-
-import { FaLinkedin } from "react-icons/fa";
 
 const Span = styled.span`
   font-family: "Playfair Display", serif;
