@@ -1,176 +1,197 @@
-import * as React from "react"
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { Link } from "gatsby";
+import styled from "styled-components";
+import GlobalStyle from "../global-styles";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import Header from "../components/header";
+import SimpleSection from "../components/simple-section";
+import CharacterSlider from "../components/characters-slider";
+import Benefice from "../components/benefice";
+import Grid from "../components/grid";
+import Card from "../components/card";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+import GeoCharacter from "../images/characters-markable-geo.png";
+import CrownCharacter from "../images/characters-markable-crown.png";
+import ArmsUpCharacter from "../images/characters-markable-armsup.png";
+import HeartCharacter from "../images/characters-markable-heart.png";
+import TalkCharacter from "../images/characters-markable-talk.png";
+import TransitionDown from "../images/page-transition.png";
+import TransitionUp from "../images/page-transition-up.png";
+import TeamPicture from "../images/team-markable.png";
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+import { FaLinkedin } from "react-icons/fa";
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+const Span = styled.span`
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: italic;
+`;
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+const Transition = styled.img`
+  width: 100%;
+`;
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
+const ImageWrapper = styled.section`
+  z-index: -1;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+const Image = styled.img`
+  z-index: -5;
+  width: 70%;
+  margin-bottom: -30px;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
+`;
+
+const Footer = styled.p`
+  background-color: #0b0f10;
+  color: white;
+  padding: 25px 0px;
+  margin: 0px;
+  text-align: center;
+`;
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
+    <body>
+      <GlobalStyle />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Markable</title>
+        <link rel="canonical" href="http://www.markable.so" />
+      </Helmet>
+      <Header textButton="Parlons de votre marque" url="#" />
+      <SimpleSection content="Beaucoup vous explique que pour attirer, convertir et fidéliser vos clients vous devez toujours faire plus. Plus de marketing, plus de neuroscience, plus de visibilité, plus de notoriété, plus de techniques, ... La vérité, c’est que votre capacité à convaincre votre cible dépend moins de ce que vous mettez en place que de la manière dont vous vous différenciez de vos concurrents.">
+        La plupart des entreprises ne sont <br />
+        <Span>ni vues, ni entendues, ni comprises.</Span>
+      </SimpleSection>
+      <CharacterSlider />
+      <SimpleSection content="Vous pouvez modifier votre promesse, votre gamme de produits ou mettre en avant des valeurs telles que “l’authenticité” ou “la durabilité” pour conquérir le cœur de vos clients. Le fait est que votre marché est de plus en plus éduqué et vos concurrents de plus en plus nombreux. Et dans un monde où chaque concurrent n’est qu’une nuance de gris du précédent, seule les entreprises hautes en couleurs tirent leur épingle du jeu.">
+        La clé ? <br />
+        <Span>Oser être radicalement différent !</Span>
+      </SimpleSection>
+      <Transition src={TransitionDown} />
+      <SimpleSection backgroundColor="white" titleColor="black">
+        <Span>Notre solution </Span>
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+        pour sortir la tête du troupeau
+      </SimpleSection>
+      <Benefice
+        url={GeoCharacter}
+        alt="Un personnage gris"
+        subtitleText="Une identité unique"
+        number="01"
+      >
+        Pour vous démarquer sur votre marché, être différent ne suffit plus.
+        Vous devez créer une marque radicalement différente. C’est l’outil
+        essentiel pour attirer, convertir et fidéliser de nouveaux clients.
+        C'est précisément là que nous intervenons. Nous travaillons votre
+        stratégie de marque en amont pour que toutes vos actions de
+        communication, marketing, vente et RH, soient efficientes et
+        performantes
+      </Benefice>
+      <Benefice
+        isReverse="yes"
+        textAlign="right"
+        url={CrownCharacter}
+        alt="Un personnage rouge"
+        subtitleText="Un positionnement différentiant"
+        number="02"
+      >
+        Pour vous démarquer sur votre marché, être différent ne suffit plus.
+        Vous devez créer une marque radicalement différente. C’est l’outil
+        essentiel pour attirer, convertir et fidéliser de nouveaux clients.
+        C'est précisément là que nous intervenons. Nous travaillons votre
+        stratégie de marque en amont pour que toutes vos actions de
+        communication, marketing, vente et RH, soient efficientes et
+        performantes
+      </Benefice>
+      <Benefice
+        url={ArmsUpCharacter}
+        alt="Un personnage gris"
+        subtitleText="Un look distinctif"
+        number="03"
+      >
+        Pour vous démarquer sur votre marché, être différent ne suffit plus.
+        Vous devez créer une marque radicalement différente. C’est l’outil
+        essentiel pour attirer, convertir et fidéliser de nouveaux clients.
+        C'est précisément là que nous intervenons. Nous travaillons votre
+        stratégie de marque en amont pour que toutes vos actions de
+        communication, marketing, vente et RH, soient efficientes et
+        performantes
+      </Benefice>
+      <Benefice
+        isReverse="yes"
+        textAlign="right"
+        url={HeartCharacter}
+        alt="Un personnage rouge"
+        subtitleText="Une expérience unique"
+        number="04"
+      >
+        Pour vous démarquer sur votre marché, être différent ne suffit plus.
+        Vous devez créer une marque radicalement différente. C’est l’outil
+        essentiel pour attirer, convertir et fidéliser de nouveaux clients.
+        C'est précisément là que nous intervenons. Nous travaillons votre
+        stratégie de marque en amont pour que toutes vos actions de
+        communication, marketing, vente et RH, soient efficientes et
+        performantes
+      </Benefice>
+      <Benefice
+        url={TalkCharacter}
+        alt="Un personnage gris"
+        subtitleText="Une communication magnétique"
+        number="05"
+      >
+        Pour vous démarquer sur votre marché, être différent ne suffit plus.
+        Vous devez créer une marque radicalement différente. C’est l’outil
+        essentiel pour attirer, convertir et fidéliser de nouveaux clients.
+        C'est précisément là que nous intervenons. Nous travaillons votre
+        stratégie de marque en amont pour que toutes vos actions de
+        communication, marketing, vente et RH, soient efficientes et
+        performantes
+      </Benefice>
+      <SimpleSection
+        backgroundColor="white"
+        titleColor="black"
+        textColor="black"
+        content="Pour vous démarquer sur votre marché, être différent ne suffit plus. Vous devez créer une marque radicalement différente. C’est l’outil essentiel pour attirer, convertir et fidéliser de nouveaux clients. C'est précisément là que nous intervenons. Nous travaillons votre stratégie de marque en amont pour que toutes vos actions de communication, marketing, vente et RH, soient efficientes et performantes"
+      >
+        <Span>Pourquoi nous avons </Span>
+        <br />
+        créé Markable
+      </SimpleSection>
+      <ImageWrapper>
+        <Image src={TeamPicture} alt="Équipe de Markable"></Image>
+      </ImageWrapper>
+      <Transition src={TransitionUp} style={{ marginBottom: -10 }} />
+      <SimpleSection>
+        <Span>Avec Markable, </Span>
+        <br />
+        communiquer n'aura jamais été aussi simple.
+      </SimpleSection>
+      <Grid>
+        <Card>Lancez un nouveau concept et rencontrez votre public</Card>
+        <Card>
+          Attirer des clients plus qualifés et les meilleures collaborateurs
+        </Card>
+        <Card>Gagner vos concours et/ou de nouveaux marchés</Card>
+        <Card>Passer de l’idée au produit minimum viable et vous lancer</Card>
+      </Grid>
+      <SimpleSection url="#" textButton="C'est parti !">
+        <Span>Besoin de développer une stratégie de marque&nbsp;?</Span>
+        <br />
+        Prenez rendez-vous avec un de nos experts&nbsp;!
+      </SimpleSection>
+      <Footer>Markable - 2022 © Tous droits réservés</Footer>
+    </body>
+  );
+};
 
-export default IndexPage
-
-export const Head = () => <title>Home Page</title>
+export default IndexPage;
