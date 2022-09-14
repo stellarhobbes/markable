@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-const Wrapper = styled.button`
+import { motion } from "framer-motion";
+
+const Wrapper = styled(motion.button)`
   background-color: #f10c35;
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -21,7 +23,13 @@ const Wrapper = styled.button`
 const Button = (props) => {
   return (
     <Link to={props.url}>
-      <Wrapper>{props.textButton}</Wrapper>
+      <Wrapper
+        className="box"
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        {props.textButton}
+      </Wrapper>
     </Link>
   );
 };

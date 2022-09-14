@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import GlobalStyle from "../global-styles";
 
@@ -6,6 +8,11 @@ import Button from "./button";
 
 import WhiteLogo from "../images/logo-markable-white.png";
 import BackgroundMeeting from "../images/markable-meeting-picture.jpg";
+
+const animationProperties = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: -30 },
+};
 
 const Main = styled.div`
   background-image: url(${BackgroundMeeting});
@@ -31,9 +38,12 @@ const Accroche = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   color: white;
   text-align: center;
+  @media (max-width: 960px) {
+    font-size: 3.2em;
+  }
 `;
 const Span = styled.span`
   font-family: "Playfair Display", serif;
@@ -51,6 +61,13 @@ const Content = styled.p`
 `;
 
 const Header = (props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <Main>
       <GlobalStyle />
@@ -59,7 +76,13 @@ const Header = (props) => {
           <Image src={WhiteLogo} alt="Logo de Markable"></Image>
         </Logo>
         <Accroche>
-          <Title>
+          <Title
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={animationProperties}
+          className="square"
+          >
             Radicalement <Span>différent</Span>
           </Title>
           <Content>

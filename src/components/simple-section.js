@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import GlobalStyle from "../global-styles";
 
 import Button from "./button";
+
+const animationProperties = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: -30 },
+};
 
 const Main = styled.div`
   background-color: ${(props) =>
@@ -15,7 +22,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
 `;
-const Subtitle = styled.h2`
+const Subtitle = styled(motion.h2)`
   color: ${(props) => (props.titleColor === "black" ? "#000000" : "#ffffff")};
   text-align: center;
 `;
@@ -29,15 +36,33 @@ const Content = styled.p`
 `;
 
 const SimpleSection = (props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <Main backgroundColor={props.backgroundColor}>
       <GlobalStyle />
       <Wrapper>
-        <Subtitle titleColor={props.titleColor}>{props.children}</Subtitle>
+        <Subtitle
+          titleColor={props.titleColor}
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={animationProperties}
+          className="square"
+        >
+          {props.children}
+        </Subtitle>
         {props.content && (
           <Content textColor={props.textColor}>{props.content}</Content>
         )}
-        {props.url && <Button url={props.url} textButton={props.textButton}></Button>}
+        {props.url && (
+          <Button url={props.url} textButton={props.textButton}></Button>
+        )}
       </Wrapper>
     </Main>
   );

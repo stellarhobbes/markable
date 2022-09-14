@@ -22,11 +22,11 @@ const CharacterSlider = () => {
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
-                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
-                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
-                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
-                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={RedCharacter} alt="Un personnage rouge"></Character>
+                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
+                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
+                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
+                <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
                 <Character src={GreyCharacter} alt="Un personnage gris"></Character>
