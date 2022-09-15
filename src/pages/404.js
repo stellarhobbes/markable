@@ -1,46 +1,43 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import GlobalStyle from "../global-styles"
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import Button from "../components/button"
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Body = styled.body`
+  margin: 0px;
+`
+const Main = styled.section`
+ color: white;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const Title = styled.h1`
+margin: 0px;
+`
+const Subtitle = styled.p`
+margin: 0px;
+font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: italic;
+`
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Body style={{backgroundColor: "#0b0f10"}}>
+      <GlobalStyle/>
+      <Main>
+        <Title>Maaaaaaaaaaaaaaaark !</Title>
+        <Subtitle>( je t'aime )</Subtitle>
+        <div style={{marginBottom: "50px"}}></div>
+        <Link to="/"><Button textButton="Retour à l'accueil"></Button></Link>
+      </Main>
+    </Body>
   )
 }
 
