@@ -1,0 +1,62 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add gatsby-plugin-plausible
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.13.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/thomas/localcode/markable/node_modules/gatsby-plugin-utils/node_modules/.bin/mime'
+
+npm manifest: 
+  {
+    "name": "markable",
+    "version": "1.0.0",
+    "private": true,
+    "description": "markable",
+    "author": "stellarhobbes",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean"
+    },
+    "dependencies": {
+      "babel-plugin-styled-components": "^2.0.7",
+      "framer-motion": "^7.3.5",
+      "gatsby": "^4.21.1",
+      "gatsby-plugin-image": "^2.22.0",
+      "gatsby-plugin-manifest": "^4.23.0",
+      "gatsby-plugin-react-helmet": "^5.22.0",
+      "gatsby-plugin-sharp": "^4.22.0",
+      "gatsby-plugin-sitemap": "^5.22.0",
+      "gatsby-plugin-styled-components": "^5.22.0",
+      "gatsby-source-filesystem": "^4.22.0",
+      "gatsby-transformer-sharp": "^4.22.0",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-fast-marquee": "^1.3.5",
+      "react-helmet": "^6.1.0",
+      "react-icons": "^4.4.0",
+      "react-intersection-observer": "^9.4.0",
+      "styled-components": "^5.3.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

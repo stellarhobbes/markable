@@ -13,6 +13,12 @@ module.exports = {
         start_url: `/`
       },
     },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `https://markable.so/`,
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
