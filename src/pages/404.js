@@ -37,7 +37,9 @@ const NotFoundPage = () => {
       <GlobalStyle />
       <Main>
         <Marquee gradientWidth="0" direction="left">
-          <Title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maaaaaaaaaaaaaaaaaaaaaaaaaaark&nbsp;!</Title>
+          <Title>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maaaaaaaaaaaaaaaaaaaaaaaaaaark&nbsp;!
+          </Title>
         </Marquee>
         <Subtitle>( je t'aime )</Subtitle>
         <div style={{ marginBottom: "50px" }}></div>
